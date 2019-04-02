@@ -4,7 +4,7 @@
       <el-form-item label="赠送积分：">
         <el-input v-model="value.giftPoint"></el-input>
       </el-form-item>
-      <el-form-item label="赠送成长值：">
+      <!-- <el-form-item label="赠送成长值：">
         <el-input v-model="value.giftGrowth"></el-input>
       </el-form-item>
       <el-form-item label="积分购买限制：">
@@ -16,7 +16,7 @@
           :active-value="1"
           :inactive-value="0">
         </el-switch>
-      </el-form-item>
+      </el-form-item> -->
       <el-form-item label="商品上架：">
         <el-switch
           v-model="value.publishStatus"
@@ -45,19 +45,19 @@
           <el-checkbox :label="3">免费包邮</el-checkbox>
         </el-checkbox-group>
       </el-form-item>
-      <el-form-item label="详细页标题：">
+      <!-- <el-form-item label="详细页标题：">
         <el-input v-model="value.detailTitle"></el-input>
       </el-form-item>
       <el-form-item label="详细页描述：">
         <el-input v-model="value.detailDesc"></el-input>
-      </el-form-item>
+      </el-form-item> -->
       <el-form-item label="商品关键字：">
         <el-input v-model="value.keywords"></el-input>
       </el-form-item>
-      <el-form-item label="商品备注：">
+      <el-form-item label="商品赠品：">
         <el-input v-model="value.note" type="textarea" :autoSize="true"></el-input>
       </el-form-item>
-      <el-form-item label="选择优惠方式：">
+      <!-- <el-form-item label="选择优惠方式：">
         <el-radio-group v-model="value.promotionType" size="small">
           <el-radio-button :label="0">无优惠</el-radio-button>
           <el-radio-button :label="1">特惠促销</el-radio-button>
@@ -92,7 +92,7 @@
           <el-input style="width: 220px" v-model="value.promotionPrice" placeholder="输入促销价格"></el-input>
         </div>
 
-      </el-form-item>
+      </el-form-item> -->
       <el-form-item v-show="value.promotionType===2">
         <div v-for="(item, index) in value.memberPriceList" :class="{littleMargin:index!==0}">
           {{item.memberLevelName}}：

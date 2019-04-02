@@ -88,6 +88,12 @@
         <el-table-column label="用户账号" align="center">
           <template slot-scope="scope">{{scope.row.memberUsername}}</template>
         </el-table-column>
+        <el-table-column label="收货人" align="center" width="180">
+          <template slot-scope="scope">{{scope.row.receiverName}}</template>
+        </el-table-column>
+        <el-table-column label="收货信息" align="center" width="180">
+          <template slot-scope="scope">{{scope.row.receiverProvince}}{{scope.row.receiverCity}}{{scope.row.receiverRegion}}{{scope.row.receiverDetailAddress}}</template>
+        </el-table-column>
         <el-table-column label="订单金额" width="120" align="center">
           <template slot-scope="scope">￥{{scope.row.totalAmount}}</template>
         </el-table-column>

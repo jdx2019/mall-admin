@@ -9,7 +9,7 @@
         <div style="text-align: center">
           <svg-icon icon-class="login-mall" style="width: 56px;height: 56px;color: #409EFF"></svg-icon>
         </div>
-        <h2 class="login-title color-main">mall-admin-web</h2>
+        <h2 class="login-title color-main">弘远数码商城后台管理系统</h2>
         <el-form-item prop="username">
           <el-input name="username"
                     type="text"
@@ -115,11 +115,19 @@
     position: absolute;
     left: 0;
     right: 0;
-    width: 360px;
-    margin: 140px auto;
-    border-top: 10px solid #409EFF;
+    width: 550px;
+    margin: 160px auto;
+    border-top: 20px solid #409EFF;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+  
+  .el-card__body{
+    width: 60%;
 
+  }
   .login-title {
     text-align: center;
   }

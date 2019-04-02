@@ -101,7 +101,7 @@
           @click="handleSyncProductSkuPrice">同步价格
         </el-button>
       </el-form-item>
-      <el-form-item label="属性图片：" v-if="hasAttrPic">
+      <!-- <el-form-item label="属性图片：" v-if="hasAttrPic">
         <el-card shadow="never" class="cardBg">
           <div v-for="(item,index) in selectProductAttrPics">
             <span>{{item.name}}:</span>
@@ -125,7 +125,7 @@
             <el-input v-else class="paramInput" v-model="selectProductParam[index].value"></el-input>
           </div>
         </el-card>
-      </el-form-item>
+      </el-form-item> -->
       <el-form-item label="商品相册：">
         <multi-upload v-model="selectProductPics"></multi-upload>
       </el-form-item>

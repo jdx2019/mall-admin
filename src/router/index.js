@@ -95,7 +95,8 @@ export const constantRouterMap = [
         path: 'productAttr',
         name: 'productAttr',
         component: () => import('@/views/pms/productAttr/index'),
-        meta: {title: '商品类型', icon: 'product-attr'}
+        meta: {title: '商品类型', icon: 'product-attr'},
+        hidden:true
       },
       {
         path: 'productAttrList',
@@ -205,7 +206,8 @@ export const constantRouterMap = [
         path: 'flash',
         name: 'flash',
         component: () => import('@/views/sms/flash/index'),
-        meta: {title: '秒杀活动列表', icon: 'sms-flash'}
+        meta: {title: '秒杀活动列表', icon: 'sms-flash'},
+        hidden:true
       },
       {
         path: 'flashSession',
@@ -232,7 +234,8 @@ export const constantRouterMap = [
         path: 'coupon',
         name: 'coupon',
         component: () => import('@/views/sms/coupon/index'),
-        meta: {title: '优惠券列表', icon: 'sms-coupon'}
+        meta: {title: '优惠券列表', icon: 'sms-coupon'},
+        hidden:true
       },
       {
         path: 'addCoupon',
@@ -259,7 +262,8 @@ export const constantRouterMap = [
         path: 'brand',
         name: 'homeBrand',
         component: () => import('@/views/sms/brand/index'),
-        meta: {title: '品牌推荐', icon: 'product-brand'}
+        meta: {title: '品牌推荐', icon: 'product-brand'},
+        hidden:true
       },
       {
         path: 'new',
@@ -271,13 +275,15 @@ export const constantRouterMap = [
         path: 'hot',
         name: 'homeHot',
         component: () => import('@/views/sms/hot/index'),
-        meta: {title: '人气推荐', icon: 'sms-hot'}
+        meta: {title: '人气推荐', icon: 'sms-hot'},
+        hidden:true
       },
       {
         path: 'subject',
         name: 'homeSubject',
         component: () => import('@/views/sms/subject/index'),
-        meta: {title: '专题推荐', icon: 'sms-subject'}
+        meta: {title: '专题推荐', icon: 'sms-subject'},
+        hidden:true
       },
       {
         path: 'advertise',

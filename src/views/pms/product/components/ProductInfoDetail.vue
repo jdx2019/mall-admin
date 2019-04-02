@@ -26,13 +26,13 @@
           </el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="商品介绍：">
+      <!-- <el-form-item label="商品介绍：">
         <el-input
           :autoSize="true"
           v-model="value.description"
           type="textarea"
           placeholder="请输入内容"></el-input>
-      </el-form-item>
+      </el-form-item> -->
       <el-form-item label="商品货号：">
         <el-input v-model="value.productSn"></el-input>
       </el-form-item>
@@ -48,13 +48,13 @@
       <el-form-item label="计量单位：">
         <el-input v-model="value.unit"></el-input>
       </el-form-item>
-      <el-form-item label="商品重量：">
+      <!-- <el-form-item label="商品重量：">
         <el-input v-model="value.weight" style="width: 300px"></el-input>
         <span style="margin-left: 20px">克</span>
-      </el-form-item>
-      <el-form-item label="排序">
+      </el-form-item> -->
+      <!-- <el-form-item label="排序">
         <el-input v-model="value.sort"></el-input>
-      </el-form-item>
+      </el-form-item> -->
       <el-form-item style="text-align: center">
         <el-button type="primary" size="medium" @click="handleNext('productInfoForm')">下一步，填写商品促销</el-button>
       </el-form-item>
