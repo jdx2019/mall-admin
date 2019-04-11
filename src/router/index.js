@@ -307,6 +307,32 @@ export const constantRouterMap = [
       }
     ]
   },
+  {
+    path:'/know',
+    component: Layout,
+    name: 'know',
+    meta: {title: '知道', icon: 'sms'},
+    children: [
+      {
+        path: 'slide',
+        name: 'slide',
+        component: () => import('@/views/sms/know/index'),
+        meta: {title: '轮播', icon: 'sms-flash'},
+      },
+      {
+        path: 'notice',
+        name: 'notice',
+        component: () => import('@/views/sms/flash/sessionList'),
+        meta: {title: '公告', icon: 'sms-flash'},
+      },
+      {
+        path: 'news',
+        name: 'news',
+        component: () => import('@/views/sms/flash/selectSessionList'),
+        meta: {title: '新闻', icon: 'sms-flash'},
+      }
+    ]
+  },
   {path: '*', redirect: '/404', hidden: true}
 ]
 

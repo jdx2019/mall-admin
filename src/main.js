@@ -12,6 +12,7 @@ import '@/styles/index.scss' // global css
 import App from './App'
 import router from './router'
 import store from './store'
+import axios from 'axios'
 
 import '@/icons' // icon
 import '@/permission' // permission control
@@ -19,6 +20,7 @@ import '@/permission' // permission control
 Vue.use(ElementUI, { locale })
 Vue.use(VCharts)
 
+Vue.prototype.$axios = axios;
 Vue.config.productionTip = false
 
 new Vue({

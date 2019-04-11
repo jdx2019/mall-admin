@@ -41,3 +41,11 @@ export function updateHomeAdvertise(id,data) {
     data:data
   })
 }
+
+// 知道
+export function createKnowSlider(data) {
+  return request({
+    url:'/carousel/create?name='+data.name+'&pic='+data.pic+'&url='+data.url+'&note='+data.note+'&status=true',
+    method:'post'
+  })
+}
