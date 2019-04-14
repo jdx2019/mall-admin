@@ -328,7 +328,7 @@ export const constantRouterMap = [
       {
         path: 'news',
         name: 'news',
-        component: () => import('@/views/sms/flash/selectSessionList'),
+        component: () => import('@/views/sms/know/news'),
         meta: {title: '新闻', icon: 'sms-flash'},
       }
     ]

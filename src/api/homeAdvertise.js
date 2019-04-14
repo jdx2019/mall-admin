@@ -49,3 +49,20 @@ export function createKnowSlider(data) {
     method:'post'
   })
 }
+
+// 知道
+export function createKnowNews(data) {
+  return request({
+    url:'/information/create?title='+data.title+'&subTitle='+data.subTitle+'&pic='+data.pic+'&content='+data.content+'&status=true',
+    method:'post'
+  })
+}
+
+
+// 获取知道轮播数据
+export function getKnowSlider(data) {
+  return request({
+    url:'/carousel/create?name='+data.name+'&pic='+data.pic+'&url='+data.url+'&note='+data.note+'&status=true',
+    method:'post'
+  })
+}
