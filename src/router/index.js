@@ -235,7 +235,6 @@ export const constantRouterMap = [
         name: 'coupon',
         component: () => import('@/views/sms/coupon/index'),
         meta: {title: '优惠券列表', icon: 'sms-coupon'},
-        hidden:true
       },
       {
         path: 'addCoupon',
@@ -316,8 +315,40 @@ export const constantRouterMap = [
       {
         path: 'slide',
         name: 'slide',
-        component: () => import('@/views/sms/know/index'),
-        meta: {title: '轮播', icon: 'sms-flash'},
+        component: () => import('@/views/sms/know/slide'),
+        meta: {title: '添加轮播', icon: 'sms-flash'},
+      },
+      {
+        path: 'list',
+        name: 'list',
+        component: () => import('@/views/sms/know/slideList'),
+        meta: {title: '轮播数据', icon: 'sms-flash'},
+      },
+      {
+        path: 'news',
+        name: 'news',
+        component: () => import('@/views/sms/know/news'),
+        meta: {title: '添加新闻', icon: 'sms-flash'},
+      },
+      {
+        path: 'newsList',
+        name: 'newsList',
+        component: () => import('@/views/sms/know/newsList'),
+        meta: {title: '新闻数据', icon: 'sms-flash'},
+      },
+      {
+        path: 'newsUpdate',
+        name: 'newsUpdate',
+        component: () => import('@/views/sms/know/newsUpdate'),
+        meta: {title: '修改新闻', icon: 'sms-flash'},
+        hidden:true
+      },
+      {
+        path: 'slideUpdate',
+        name: 'slideUpdate',
+        component: () => import('@/views/sms/know/slideUpdate'),
+        meta: {title: '修改轮播', icon: 'sms-flash'},
+        hidden:true
       },
       {
         path: 'notice',
@@ -325,12 +356,7 @@ export const constantRouterMap = [
         component: () => import('@/views/sms/flash/sessionList'),
         meta: {title: '公告', icon: 'sms-flash'},
       },
-      {
-        path: 'news',
-        name: 'news',
-        component: () => import('@/views/sms/know/news'),
-        meta: {title: '新闻', icon: 'sms-flash'},
-      }
+
     ]
   },
   {path: '*', redirect: '/404', hidden: true}

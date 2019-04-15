@@ -60,9 +60,18 @@ export function createKnowNews(data) {
 
 
 // 获取知道轮播数据
-export function getKnowSlider(data) {
+export function getSlideList(params) {
   return request({
-    url:'/carousel/create?name='+data.name+'&pic='+data.pic+'&url='+data.url+'&note='+data.note+'&status=true',
-    method:'post'
+    url:'/home/advertise/list',
+    method:'get',
+    params:params
+  })
+}
+
+export function deleteSlide(data) {
+  return request({
+    url:'/carousel/delete',
+    method:'post',
+    data:data
   })
 }
