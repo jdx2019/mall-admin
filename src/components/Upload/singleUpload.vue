@@ -14,7 +14,7 @@
       <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过10MB</div>
     </el-upload>
     <el-dialog :visible.sync="dialogVisible">
-      <img width="100%" :src="fileList[0].url" alt="">
+      <img  :src="fileList[0].url" alt="">
     </el-dialog>
   </div>
 </template>
@@ -101,7 +101,9 @@
   }
 </script>
 <style>
-
+.el-upload-list--picture .el-upload-list__item-thumbnail{
+  width: auto !important;
+}
 </style>
 
 

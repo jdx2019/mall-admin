@@ -48,7 +48,6 @@
     subTitle:null,
     pic: null,
     status: true,
-    url: null,
     content: null
   };
   export default {

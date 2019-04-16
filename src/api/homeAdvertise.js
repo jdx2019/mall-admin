@@ -1,4 +1,5 @@
 import request from '@/utils/request'
+import qs from 'qs'
 export function fetchList(params) {
   return request({
     url:'/home/advertise/list',
@@ -45,16 +46,18 @@ export function updateHomeAdvertise(id,data) {
 // 知道
 export function createKnowSlider(data) {
   return request({
-    url:'/carousel/create?name='+data.name+'&pic='+data.pic+'&url='+data.url+'&note='+data.note+'&status=true',
-    method:'post'
+    url:'/carousel/create',
+    method:'post',
+    data:data
   })
 }
 
 // 知道
 export function createKnowNews(data) {
   return request({
-    url:'/information/create?title='+data.title+'&subTitle='+data.subTitle+'&pic='+data.pic+'&content='+data.content+'&status=true',
-    method:'post'
+     url:'/information/create',
+    method:'post',
+    data:data
   })
 }
 
@@ -72,6 +75,6 @@ export function deleteSlide(data) {
   return request({
     url:'/carousel/delete',
     method:'post',
-    data:data
+    data:qs.stringify(data)
   })
 }
