@@ -116,7 +116,10 @@
                     type: 'success',
                     duration:1000
                   });
-                });
+                  this.$router.replace('/know/list');
+                }).catch(function (error) {
+                    console.log(error);
+                  });;
               }
             });
 

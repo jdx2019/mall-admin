@@ -11,6 +11,12 @@
       <el-form-item label="新闻副标题：" prop="subName">
         <el-input v-model="homeAdvertise.subTitle" class="input-width"></el-input>
       </el-form-item>
+      <el-form-item label="新闻类别：" prop="mold">
+        <el-cascader
+          v-model="selectMold"
+          :options="productCateOptions">
+        </el-cascader>
+      </el-form-item>
 
       <el-form-item label="新闻图片：">
         <single-upload v-model="homeAdvertise.pic"></single-upload>
@@ -48,7 +54,8 @@
     subTitle:null,
     pic: null,
     status: true,
-    content: null
+    content: null,
+    mold:0
   };
   export default {
     name: 'HomeAdvertiseDetail',
@@ -62,6 +69,17 @@
     data() {
       return {
         homeAdvertise: null,
+        selectMold:[],
+        productCateOptions: [{
+          label:"新闻",
+          value:"0"
+        },{
+          label:"活动",
+          value:"1"
+        },{
+          label:"测评",
+          value:"2"
+        }],
         rules: {
           // name: [
           //   {required: true, message: '请输入新闻标题', trigger: 'blur'},
@@ -89,6 +107,11 @@
       }else{
         this.homeAdvertise = Object.assign({},defaultHomeAdvertise);
       }
+    },
+    watch:{
+        selectMold:function(val){
+          this.homeAdvertise.mold = val[0];
+        }
     },
     methods: {
       onSubmit(formName) {
@@ -118,7 +141,10 @@
                     type: 'success',
                     duration:1000
                   });
-                });
+                  this.$router.replace('/know/newsList');
+                }).catch(function (error) {
+                    console.log(error);
+                  });
               }
             });
 

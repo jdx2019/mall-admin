@@ -3,7 +3,7 @@
     <el-card class="operate-container" shadow="never">
       <i class="el-icon-tickets"></i>
       <span>数据列表</span>
-      <el-button size="mini" class="btn-add" @click="handleAdd()">添加广告</el-button>
+      <el-button size="mini" class="btn-add" @click="handleAdd()">添加新闻</el-button>
     </el-card>
     <div class="table-container">
       <el-table ref="homeAdvertiseTable"
@@ -23,6 +23,9 @@
         </el-table-column>
         <el-table-column label="新闻内容" align="center">
           <template slot-scope="scope">{{scope.row.content}}</template>
+        </el-table-column>
+        <el-table-column label="新闻类型" align="center">
+          <template slot-scope="scope">{{scope.row.mold}}</template>
         </el-table-column>
         <el-table-column label="新闻图片" align="center">
           <template slot-scope="scope"><img style="height: 80px" :src="scope.row.pic"></template>
@@ -76,11 +79,11 @@
   </div>
 </template>
 <script>
-  import {fetchList,updateStatus,deleteHomeAdvertise,deleteSlide} from '@/api/homeAdvertise';
+  import {fetchList,updateStatus,deleteHomeAdvertise,deleteSlide,deleteNews} from '@/api/homeAdvertise';
   import {formatDate} from '@/utils/date';
   const defaultListQuery = {
     pageNum: 1,
-    pageSize: 5,
+    pageSize: 10,
     name: null,
     type: null,
     endTime:null
@@ -105,6 +108,8 @@
         total: null,
         listLoading: false,
         multipleSelection: [],
+        pageSize:10,
+        pageNum:1,
         operates: [
           {
             label: "删除",
@@ -115,7 +120,7 @@
       }
     },
     created() {
-      this.getList();
+      this.getList(this.pageSize,this.pageNum);
     },
     filters:{
       formatType(type){
@@ -137,80 +142,30 @@
       handleResetSearch() {
         this.listQuery = Object.assign({}, defaultListQuery);
       },
-      handleSearchList() {
-        this.listQuery.pageNum = 1;
-        this.getList();
-      },
       handleSelectionChange(val){
         this.multipleSelection = val;
       },
       handleSizeChange(val) {
-        this.listQuery.pageNum = 1;
-        this.listQuery.pageSize = val;
-        this.getList();
+        this.pageSize = val;
+        this.getList(val,1);
       },
       handleCurrentChange(val) {
-        this.listQuery.pageNum = val;
-        this.getList();
+        this.getList(this.pageSize,val);
       },
-      handleUpdateStatus(index,row){
-        this.$confirm('是否要修改上线/下线状态?', '提示', {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
-          type: 'warning'
-        }).then(() => {
-          updateStatus(row.id,{status:row.status}).then(response=>{
-            this.getList();
-            this.$message({
-              type: 'success',
-              message: '修改成功!'
-            });
-          });
-        }).catch(() => {
-          this.$message({
-            type: 'success',
-            message: '已取消操作!'
-          });
-          this.getList();
-        });
-      },
+
       handleDelete(index,row){
         this.deleteHomeAdvertise(row.id);
       },
-      handleBatchOperate(){
-        if (this.multipleSelection < 1) {
-          this.$message({
-            message: '请选择一条记录',
-            type: 'warning',
-            duration: 1000
-          });
-          return;
-        }
-        let ids = [];
-        for (let i = 0; i < this.multipleSelection.length; i++) {
-          ids.push(this.multipleSelection[i].id);
-        }
-        if(this.operateType===0){
-          //删除
-          this.deleteHomeAdvertise(ids);
-        }else {
-          this.$message({
-            message: '请选择批量操作类型',
-            type: 'warning',
-            duration: 1000
-          });
-        }
-      },
+
       handleAdd(){
-        this.$router.push({path: '/sms/addAdvertise'})
+        this.$router.push({path: '/know/news'})
       },
       handleUpdate(index,row){
         this.$router.push({path: '/know/newsUpdate', query: {data: row}})
       },
-      getList() {
+      getList(pageSize,pageNum) {
         this.listLoading = true;
-        this.$axios.get('https://www.hystkj.com/information/list').then(res => {
-          console.log(res.data);
+        this.$axios.get('https://www.hystkj.com/information/list?pageSize='+pageSize+'&pageNum='+pageNum).then(res => {
           this.listLoading = false;
           this.list = res.data;
           this.total = res.data.length;
@@ -224,8 +179,8 @@
         }).then(() => {
           let params=new URLSearchParams();
           params.append("id",ids);
-          deleteSlide(params).then(response=>{
-            this.getList();
+          deleteNews(params).then(response=>{
+            this.getList(this.pageSize,this.pageNum);
             this.$message({
               type: 'success',
               message: '删除成功!'

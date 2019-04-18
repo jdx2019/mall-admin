@@ -48,6 +48,7 @@
     subTitle:null,
     pic: null,
     status: true,
+    mold:0,
     url: null,
     content: null
   };
@@ -110,6 +111,8 @@
                     duration:1000
                   });
                   this.$router.back();
+                  }).catch(function (error) {
+                    console.log(error);
                   });
               } else {
                 createKnowNews(this.homeAdvertise).then(response => {
@@ -120,7 +123,9 @@
                     type: 'success',
                     duration:1000
                   });
-                });
+                }).catch(function (error) {
+                    console.log(error);
+                  });
               }
             });
 

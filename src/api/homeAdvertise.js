@@ -46,9 +46,8 @@ export function updateHomeAdvertise(id,data) {
 // 知道
 export function createKnowSlider(data) {
   return request({
-    url:'/carousel/create',
-    method:'post',
-    data:data
+    url:'/carousel/create?pic='+data.pic+'&url='+data.url+'&name='+data.name+'&status=true',
+    method:'post'
   })
 }
 
@@ -75,6 +74,14 @@ export function deleteSlide(data) {
   return request({
     url:'/carousel/delete',
     method:'post',
-    data:qs.stringify(data)
+    data:data
+  })
+}
+
+export function deleteNews(data) {
+  return request({
+    url:'/information/delete',
+    method:'post',
+    data:data
   })
 }

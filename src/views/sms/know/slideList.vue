@@ -74,7 +74,7 @@
   import {formatDate} from '@/utils/date';
   const defaultListQuery = {
     pageNum: 1,
-    pageSize: 5,
+    pageSize: 10,
     name: null,
     type: null,
     endTime:null
@@ -203,7 +203,7 @@
       },
       getList() {
         this.listLoading = true;
-        this.$axios.get('https://www.hystkj.com/carousel/list').then(res => {
+        this.$axios.get('https://www.hystkj.com/carousel/list?pageSize=10&pageNum=1',).then(res => {
           console.log(res.data);
           this.listLoading = false;
           this.list = res.data;
