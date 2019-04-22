@@ -46,8 +46,9 @@ export function updateHomeAdvertise(id,data) {
 // 知道
 export function createKnowSlider(data) {
   return request({
-    url:'/carousel/create?pic='+data.pic+'&url='+data.url+'&name='+data.name+'&status=true',
-    method:'post'
+    url:'/carousel/create',
+    method:'post',
+    data:data
   })
 }
 

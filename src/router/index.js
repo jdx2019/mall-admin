@@ -241,21 +241,18 @@ export const constantRouterMap = [
         name: 'addCoupon',
         component: () => import('@/views/sms/coupon/add'),
         meta: {title: '添加优惠券'},
-        hidden:true
       },
       {
         path: 'updateCoupon',
         name: 'updateCoupon',
         component: () => import('@/views/sms/coupon/update'),
         meta: {title: '修改优惠券'},
-        hidden:true
       },
       {
         path: 'couponHistory',
         name: 'couponHistory',
         component: () => import('@/views/sms/coupon/history'),
         meta: {title: '优惠券领取详情'},
-        hidden:true
       },
       {
         path: 'brand',
@@ -335,6 +332,18 @@ export const constantRouterMap = [
         name: 'newsList',
         component: () => import('@/views/sms/know/newsList'),
         meta: {title: '新闻数据', icon: 'sms-flash'},
+      },
+      {
+        path: 'activityList',
+        name: 'activityList',
+        component: () => import('@/views/sms/know/activityList'),
+        meta: {title: '活动数据', icon: 'sms-flash'},
+      },
+      {
+        path: 'evulateList',
+        name: 'evulateList',
+        component: () => import('@/views/sms/know/evulateList'),
+        meta: {title: '测评数据', icon: 'sms-flash'},
       },
       {
         path: 'newsUpdate',

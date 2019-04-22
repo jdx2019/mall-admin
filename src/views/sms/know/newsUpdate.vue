@@ -12,6 +12,13 @@
         <el-input v-model="homeAdvertise.subTitle" class="input-width"></el-input>
       </el-form-item>
 
+      <!-- <el-form-item label="新闻类别：" prop="mold">
+        <el-cascader
+          v-model="selectMold"
+          :options="productCateOptions">
+        </el-cascader>
+      </el-form-item> -->
+
       <el-form-item label="新闻图片：">
         <single-upload v-model="homeAdvertise.pic"></single-upload>
       </el-form-item>
@@ -64,22 +71,18 @@
     data() {
       return {
         homeAdvertise: null,
-        rules: {
-          // name: [
-          //   {required: true, message: '请输入新闻标题', trigger: 'blur'},
-          //   {min: 2, max: 140, message: '长度在 2 到 140 个字符', trigger: 'blur'}
-          // ],
-          // subName: [
-          //   {required: true, message: '请输入新闻标题', trigger: 'blur'},
-          //   {min: 2, max: 140, message: '长度在 2 到 140 个字符', trigger: 'blur'}
-          // ],
-          // url: [
-          //   {required: true, message: '请输入广告链接', trigger: 'blur'}
-          // ],
-          // pic: [
-          //   {required: true, message: '请选择新闻图片', trigger: 'blur'}
-          // ]
-        },
+        selectMold:[],
+        productCateOptions: [{
+          label:"新闻",
+          value:"0"
+        },{
+          label:"活动",
+          value:"1"
+        },{
+          label:"测评",
+          value:"2"
+        }],
+        rules: {},
         typeOptions: Object.assign({}, defaultTypeOptions)
       }
     },
@@ -92,6 +95,7 @@
         this.homeAdvertise = Object.assign({},defaultHomeAdvertise);
       }
     },
+
     methods: {
       onSubmit(formName) {
         this.$refs[formName].validate((valid) => {
@@ -102,8 +106,15 @@
               type: 'warning'
             }).then(() => {
               if (this.isEdit) {
-                 this.$axios.post('http://www.hystkj.com:8080/information/update?id='+this.homeAdvertise.id+'&title='+this.homeAdvertise.title+'&subTitle='+
-                 this.homeAdvertise.subTitle+'&pic='+this.homeAdvertise.pic+'&content='+this.homeAdvertise.content+'&status=true').then(res => {
+                 this.$axios.post('http://www.hystkj.com:8080/information/update',{
+                   content:this.homeAdvertise.content,
+                   title:this.homeAdvertise.title,
+                   subTitle:this.homeAdvertise.subTitle,
+                   pic:this.homeAdvertise.pic,
+                   mold:this.homeAdvertise.mold,
+                   id:this.homeAdvertise.id,
+                   status:true
+                 }).then(res => {
                   this.$refs[formName].resetFields();
                   this.$message({
                     message: '修改成功',

@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <div class="address-layout">
+    <!-- <div class="address-layout">
       <el-row :gutter="20">
         <el-col :span="12">
           <div class="out-border">
@@ -19,7 +19,7 @@
           </div>
         </el-col>
       </el-row>
-    </div>
+    </div> -->
     <div class="total-layout">
       <el-row :gutter="20">
         <el-col :span="6">

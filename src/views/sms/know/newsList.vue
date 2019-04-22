@@ -21,7 +21,7 @@
         <el-table-column label="新闻副标题" align="center">
           <template slot-scope="scope">{{scope.row.subTitle}}</template>
         </el-table-column>
-        <el-table-column label="新闻内容" align="center">
+        <el-table-column label="新闻内容" align="center" show-overflow-tooltip>
           <template slot-scope="scope">{{scope.row.content}}</template>
         </el-table-column>
         <el-table-column label="新闻类型" align="center">
@@ -165,10 +165,10 @@
       },
       getList(pageSize,pageNum) {
         this.listLoading = true;
-        this.$axios.get('https://www.hystkj.com/information/list?pageSize='+pageSize+'&pageNum='+pageNum).then(res => {
+        this.$axios.get('https://www.hystkj.com/information/list?pageSize='+pageSize+'&pageNum='+pageNum+'&mold=0').then(res => {
           this.listLoading = false;
-          this.list = res.data;
-          this.total = res.data.length;
+          this.list = res.data.list;
+          this.total = res.data.total;
         });
       },
       deleteHomeAdvertise(ids){

@@ -96,8 +96,7 @@
               type: 'warning'
             }).then(() => {
               if (this.isEdit) {
-                 this.$axios.post('http://www.hystkj.com:8080/carousel/update?id='+this.homeAdvertise.id+'&name='+this.homeAdvertise.name+'&url='+
-                 this.homeAdvertise.url+'&pic='+this.homeAdvertise.pic+'&status=true').then(res => {
+                 this.$axios.post('http://www.hystkj.com:8080/carousel/update',this.homeAdvertise).then(res => {
                   this.$refs[formName].resetFields();
                   this.$message({
                     message: '修改成功',
