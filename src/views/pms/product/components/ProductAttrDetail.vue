@@ -134,9 +134,9 @@
           <el-tab-pane label="电脑端详情" name="pc">
             <tinymce :width="595" :height="300" v-model="value.detailHtml"></tinymce>
           </el-tab-pane>
-          <el-tab-pane label="移动端详情" name="mobile">
+          <!-- <el-tab-pane label="移动端详情" name="mobile">
             <tinymce :width="595" :height="300" v-model="value.detailMobileHtml"></tinymce>
-          </el-tab-pane>
+          </el-tab-pane> -->
         </el-tabs>
       </el-form-item>
       <el-form-item style="text-align: center">

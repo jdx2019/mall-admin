@@ -5,28 +5,28 @@
              ref="homeAdvertiseFrom"
              label-width="150px"
              size="small">
-      <el-form-item label="新闻标题：" prop="name">
+      <el-form-item label="图文标题：" prop="name">
         <el-input v-model="homeAdvertise.title" class="input-width"></el-input>
       </el-form-item>
-      <el-form-item label="新闻副标题：" prop="subName">
+      <el-form-item label="图文副标题：" prop="subName">
         <el-input v-model="homeAdvertise.subTitle" class="input-width"></el-input>
       </el-form-item>
 
-      <!-- <el-form-item label="新闻类别：" prop="mold">
+      <!-- <el-form-item label="图文类别：" prop="mold">
         <el-cascader
           v-model="selectMold"
           :options="productCateOptions">
         </el-cascader>
       </el-form-item> -->
 
-      <el-form-item label="新闻图片：">
+      <el-form-item label="图文图片：">
         <single-upload v-model="homeAdvertise.pic"></single-upload>
       </el-form-item>
 <!-- 
-      <el-form-item label="新闻链接：" prop="url">
+      <el-form-item label="图文链接：" prop="url">
         <el-input v-model="homeAdvertise.url" class="input-width"></el-input>
       </el-form-item> -->
-      <el-form-item label="新闻详情：">
+      <el-form-item label="图文详情：">
          <tinymce :width="595" :height="300" v-model="homeAdvertise.content"></tinymce>
       </el-form-item>
       <el-form-item>
@@ -73,7 +73,7 @@
         homeAdvertise: null,
         selectMold:[],
         productCateOptions: [{
-          label:"新闻",
+          label:"图文",
           value:"0"
         },{
           label:"活动",

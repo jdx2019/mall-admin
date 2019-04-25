@@ -55,8 +55,8 @@
       <el-form-item label="可使用商品：">
         <el-radio-group v-model="coupon.useType">
           <el-radio-button :label="0">全场通用</el-radio-button>
-          <el-radio-button :label="1">指定分类</el-radio-button>
-          <el-radio-button :label="2">指定商品</el-radio-button>
+          <!-- <el-radio-button :label="1">指定分类</el-radio-button>
+          <el-radio-button :label="2">指定商品</el-radio-button> -->
         </el-radio-group>
       </el-form-item>
       <el-form-item v-show="coupon.useType===1">
@@ -162,32 +162,12 @@
     {
       label: '全场赠券',
       value: 0
-    },
-    {
-      label: '会员赠券',
-      value: 1
-    },
-    {
-      label: '购物赠券',
-      value: 2
-    },
-    {
-      label: '注册赠券',
-      value: 3
     }
   ];
   const defaultPlatformOptions = [
     {
       label: '全平台',
       value: 0
-    },
-    {
-      label: '移动平台',
-      value: 1
-    },
-    {
-      label: 'PC平台',
-      value: 2
     }
   ];
   export default {

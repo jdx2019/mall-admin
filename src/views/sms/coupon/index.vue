@@ -117,18 +117,6 @@
     {
       label: '全场赠券',
       value: 0
-    },
-    {
-      label: '会员赠券',
-      value: 1
-    },
-    {
-      label: '购物赠券',
-      value: 2
-    },
-    {
-      label: '注册赠券',
-      value: 3
     }
   ];
   export default {

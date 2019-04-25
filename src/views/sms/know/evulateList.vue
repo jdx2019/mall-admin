@@ -3,7 +3,7 @@
     <el-card class="operate-container" shadow="never">
       <i class="el-icon-tickets"></i>
       <span>数据列表</span>
-      <el-button size="mini" class="btn-add" @click="handleAdd()">添加新闻</el-button>
+      <el-button size="mini" class="btn-add" @click="handleAdd()">添加测评</el-button>
     </el-card>
     <div class="table-container">
       <el-table ref="homeAdvertiseTable"
@@ -15,19 +15,19 @@
         <el-table-column label="编号" width="120" align="center">
           <template slot-scope="scope">{{scope.row.id}}</template>
         </el-table-column>
-        <el-table-column label="新闻标题" align="center">
+        <el-table-column label="测评标题" align="center">
           <template slot-scope="scope">{{scope.row.title}}</template>
         </el-table-column>
-        <el-table-column label="新闻副标题" align="center">
+        <el-table-column label="测评副标题" align="center">
           <template slot-scope="scope">{{scope.row.subTitle}}</template>
         </el-table-column>
-        <el-table-column label="新闻内容" align="center" show-overflow-tooltip>
+        <el-table-column label="测评内容" align="center" show-overflow-tooltip>
           <template slot-scope="scope">{{scope.row.content}}</template>
         </el-table-column>
-        <el-table-column label="新闻类型" align="center">
+        <el-table-column label="测评类型" align="center">
           <template slot-scope="scope">{{scope.row.mold}}</template>
         </el-table-column>
-        <el-table-column label="新闻图片" align="center">
+        <el-table-column label="测评图片" align="center">
           <template slot-scope="scope"><img style="height: 80px" :src="scope.row.pic"></template>
         </el-table-column>
         <el-table-column label="操作" width="120" align="center">

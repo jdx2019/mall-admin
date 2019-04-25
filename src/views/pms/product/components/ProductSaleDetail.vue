@@ -17,7 +17,7 @@
           :inactive-value="0">
         </el-switch>
       </el-form-item> -->
-      <el-form-item label="商品上架：">
+      <!-- <el-form-item label="商品上架：">
         <el-switch
           v-model="value.publishStatus"
           :active-value="1"
@@ -44,7 +44,7 @@
           <el-checkbox :label="2">快速退款</el-checkbox>
           <el-checkbox :label="3">免费包邮</el-checkbox>
         </el-checkbox-group>
-      </el-form-item>
+      </el-form-item> -->
       <!-- <el-form-item label="详细页标题：">
         <el-input v-model="value.detailTitle"></el-input>
       </el-form-item>
@@ -93,7 +93,7 @@
         </div>
 
       </el-form-item> -->
-      <el-form-item v-show="value.promotionType===2">
+      <!-- <el-form-item v-show="value.promotionType===2">
         <div v-for="(item, index) in value.memberPriceList" :class="{littleMargin:index!==0}">
           {{item.memberLevelName}}：
           <el-input v-model="item.memberPrice" style="width: 200px"></el-input>
@@ -156,7 +156,7 @@
             </template>
           </el-table-column>
         </el-table>
-      </el-form-item>
+      </el-form-item> -->
       <el-form-item style="text-align: center">
         <el-button size="medium" @click="handlePrev">上一步，填写商品信息</el-button>
         <el-button type="primary" size="medium" @click="handleNext">下一步，填写商品属性</el-button>

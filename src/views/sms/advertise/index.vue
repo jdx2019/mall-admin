@@ -56,19 +56,19 @@
                 @selection-change="handleSelectionChange"
                 v-loading="listLoading" border>
         <el-table-column type="selection" width="60" align="center"></el-table-column>
-        <el-table-column label="编号" width="120" align="center">
+        <el-table-column label="编号" align="center">
           <template slot-scope="scope">{{scope.row.id}}</template>
         </el-table-column>
         <el-table-column label="广告名称" align="center">
           <template slot-scope="scope">{{scope.row.name}}</template>
         </el-table-column>
-        <el-table-column label="广告位置" width="120" align="center">
+        <el-table-column label="广告位置" align="center">
           <template slot-scope="scope">{{scope.row.type | formatType}}</template>
         </el-table-column>
-        <el-table-column label="广告图片" width="120" align="center">
+        <el-table-column label="广告图片" align="center">
           <template slot-scope="scope"><img style="height: 80px" :src="scope.row.pic"></template>
         </el-table-column>
-        <el-table-column label="时间" width="220" align="center">
+        <el-table-column label="时间" width="240" align="center">
           <template slot-scope="scope">
             <p>开始时间：{{scope.row.startTime | formatTime}}</p>
             <p>到期时间：{{scope.row.endTime | formatTime}}</p>

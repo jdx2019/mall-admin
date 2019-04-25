@@ -27,7 +27,7 @@
             <svg-icon icon-class="order" class="total-icon">
             </svg-icon>
             <div class="total-title">今日订单总数</div>
-            <div class="total-value">200</div>
+            <div class="total-value">{{welcomeDatas.title.nowOrderTotal}}</div>
           </div>
         </el-col>
         <el-col :span="6">
@@ -35,7 +35,7 @@
             <svg-icon icon-class="total-today" class="total-icon">
             </svg-icon>
             <div class="total-title">今日销售总额</div>
-            <div class="total-value">￥5000.00</div>
+            <div class="total-value">￥{{welcomeDatas.title.nowSellTotal}}</div>
           </div>
         </el-col>
         <el-col :span="6">
@@ -43,7 +43,7 @@
             <svg-icon icon-class="total-yesterday" class="total-icon">
             </svg-icon>
             <div class="total-title">昨日销售总额</div>
-            <div class="total-value">￥5000.00</div>
+            <div class="total-value">￥{{welcomeDatas.title.yesSellTotal}}</div>
           </div>
         </el-col>
         <el-col :span="6">
@@ -51,7 +51,7 @@
             <svg-icon icon-class="total-week" class="total-icon">
             </svg-icon>
             <div class="total-title">近7天销售总额</div>
-            <div class="total-value">￥50000.00</div>
+            <div class="total-value">￥{{welcomeDatas.title.oneWeekSellTotal}}</div>
           </div>
         </el-col>
       </el-row>
@@ -63,19 +63,19 @@
           <el-col :span="8">
             <div class="un-handle-item">
               <span class="font-medium">待付款订单</span>
-              <span style="float: right" class="color-danger">(10)</span>
+              <span style="float: right" class="color-danger">({{welcomeDatas.needDeal.orderPayment}})</span>
             </div>
           </el-col>
           <el-col :span="8">
             <div class="un-handle-item">
               <span class="font-medium">已完成订单</span>
-              <span style="float: right" class="color-danger">(10)</span>
+              <span style="float: right" class="color-danger">({{welcomeDatas.needDeal.orderFinish}})</span>
             </div>
           </el-col>
           <el-col :span="8">
             <div class="un-handle-item">
               <span class="font-medium">待确认收货订单</span>
-              <span style="float: right" class="color-danger">(10)</span>
+              <span style="float: right" class="color-danger">({{welcomeDatas.needDeal.orderDelivered}})</span>
             </div>
           </el-col>
         </el-row>
@@ -83,39 +83,7 @@
           <el-col :span="8">
             <div class="un-handle-item">
               <span class="font-medium">待发货订单</span>
-              <span style="float: right" class="color-danger">(10)</span>
-            </div>
-          </el-col>
-          <el-col :span="8">
-            <div class="un-handle-item">
-              <span class="font-medium">新缺货登记</span>
-              <span style="float: right" class="color-danger">(10)</span>
-            </div>
-          </el-col>
-          <el-col :span="8">
-            <div class="un-handle-item">
-              <span class="font-medium">待处理退款申请</span>
-              <span style="float: right" class="color-danger">(10)</span>
-            </div>
-          </el-col>
-        </el-row>
-        <el-row :gutter="20">
-          <el-col :span="8">
-            <div class="un-handle-item">
-              <span class="font-medium">已发货订单</span>
-              <span style="float: right" class="color-danger">(10)</span>
-            </div>
-          </el-col>
-          <el-col :span="8">
-            <div class="un-handle-item">
-              <span class="font-medium">待处理退货订单</span>
-              <span style="float: right" class="color-danger">(10)</span>
-            </div>
-          </el-col>
-          <el-col :span="8">
-            <div class="un-handle-item">
-              <span class="font-medium">广告位即将到期</span>
-              <span style="float: right" class="color-danger">(10)</span>
+              <span style="float: right" class="color-danger">({{welcomeDatas.needDeal.orderDeliver}})</span>
             </div>
           </el-col>
         </el-row>
@@ -128,15 +96,13 @@
             <div class="layout-title">商品总览</div>
             <div style="padding: 40px">
               <el-row>
-                <el-col :span="6" class="color-danger overview-item-value">100</el-col>
-                <el-col :span="6" class="color-danger overview-item-value">400</el-col>
-                <el-col :span="6" class="color-danger overview-item-value">50</el-col>
-                <el-col :span="6" class="color-danger overview-item-value">500</el-col>
+                <el-col :span="6" class="color-danger overview-item-value">{{welcomeDatas.products.productOff}}</el-col>
+                <el-col :span="6" class="color-danger overview-item-value">{{welcomeDatas.products.productOn}}</el-col>
+                <el-col :span="6" class="color-danger overview-item-value">{{welcomeDatas.products.productTotal}}</el-col>
               </el-row>
               <el-row class="font-medium">
                 <el-col :span="6" class="overview-item-title">已下架</el-col>
                 <el-col :span="6" class="overview-item-title">已上架</el-col>
-                <el-col :span="6" class="overview-item-title">库存紧张</el-col>
                 <el-col :span="6" class="overview-item-title">全部商品</el-col>
               </el-row>
             </div>
@@ -147,14 +113,12 @@
             <div class="layout-title">用户总览</div>
             <div style="padding: 40px">
               <el-row>
-                <el-col :span="6" class="color-danger overview-item-value">100</el-col>
-                <el-col :span="6" class="color-danger overview-item-value">200</el-col>
-                <el-col :span="6" class="color-danger overview-item-value">1000</el-col>
-                <el-col :span="6" class="color-danger overview-item-value">5000</el-col>
+                <el-col :span="6" class="color-danger overview-item-value">{{welcomeDatas.members.nowTotal}}</el-col>
+                <el-col :span="6" class="color-danger overview-item-value">{{welcomeDatas.members.monthTotal}}</el-col>
+                <el-col :span="6" class="color-danger overview-item-value">{{welcomeDatas.members.total}}</el-col>
               </el-row>
               <el-row class="font-medium">
                 <el-col :span="6" class="overview-item-title">今日新增</el-col>
-                <el-col :span="6" class="overview-item-title">昨日新增</el-col>
                 <el-col :span="6" class="overview-item-title">本月新增</el-col>
                 <el-col :span="6" class="overview-item-title">会员总数</el-col>
               </el-row>
@@ -258,6 +222,7 @@
     name: 'home',
     data() {
       return {
+        welcomeDatas:{},
         pickerOptions: {
           shortcuts: [{
             text: '最近一周',
@@ -331,7 +296,15 @@
           }
           this.dataEmpty = false;
           this.loading = false
-        }, 1000)
+        }, 10)
+
+
+        this.$axios.get('http://www.hystkj.com:8080/home/welcome').then(res => {
+            this.welcomeDatas = res.data.data;
+        }).catch(function (error) {
+          console.log(error);
+        });
+
       }
     }
   }
