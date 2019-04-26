@@ -344,6 +344,7 @@
     top: -50px;
   }
 
+
   .total-value {
     position: relative;
     font-size: 18px;

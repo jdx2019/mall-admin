@@ -107,17 +107,17 @@
             <!-- <p>货号：{{scope.row.productSn}}</p> -->
           </template>
         </el-table-column>
-        <!-- <el-table-column label="标签" width="140" align="center">
+        <el-table-column label="新品推荐" width="140" align="center">
           <template slot-scope="scope">
-            <p>上架：
+            <!-- <p>上架：
               <el-switch
                 @change="handlePublishStatusChange(scope.$index, scope.row)"
                 :active-value="1"
                 :inactive-value="0"
                 v-model="scope.row.publishStatus">
               </el-switch>
-            </p>
-            <p>新品：
+            </p> -->
+            <p>
               <el-switch
                 @change="handleNewStatusChange(scope.$index, scope.row)"
                 :active-value="1"
@@ -125,16 +125,16 @@
                 v-model="scope.row.newStatus">
               </el-switch>
             </p>
-            <p>推荐：
+            <!-- <p>推荐：
               <el-switch
                 @change="handleRecommendStatusChange(scope.$index, scope.row)"
                 :active-value="1"
                 :inactive-value="0"
                 v-model="scope.row.recommandStatus">
               </el-switch>
-            </p>
+            </p> -->
           </template>
-        </el-table-column> -->
+        </el-table-column>
         <el-table-column label="排序" width="100" align="center">
           <template slot-scope="scope">{{scope.row.sort}}</template>
         </el-table-column>
