@@ -265,7 +265,8 @@ export const constantRouterMap = [
         path: 'new',
         name: 'homeNew',
         component: () => import('@/views/sms/new/index'),
-        meta: {title: '新品推荐', icon: 'sms-new'}
+        meta: {title: '新品推荐', icon: 'sms-new'},
+        hidden:true
       },
       {
         path: 'hot',
