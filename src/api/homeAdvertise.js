@@ -61,6 +61,15 @@ export function createKnowNews(data) {
   })
 }
 
+// 添加图片
+export function createImage(data) {
+  return request({
+     url:'/picture/create',
+    method:'post',
+    data:data
+  })
+}
+
 
 // 获取知道轮播数据
 export function getSlideList(params) {
@@ -82,6 +91,15 @@ export function deleteSlide(data) {
 export function deleteNews(data) {
   return request({
     url:'/information/delete',
+    method:'post',
+    data:data
+  })
+}
+
+
+export function deleteImage(data) {
+  return request({
+    url:'/picture/delete',
     method:'post',
     data:data
   })

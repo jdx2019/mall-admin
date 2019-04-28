@@ -368,6 +368,27 @@ export const constantRouterMap = [
 
     ]
   },
+  {
+    path:'/image',
+    component: Layout,
+    name: 'image',
+    meta: {title: '图片管理', icon: 'sms'},
+    children: [
+      {
+        path: 'image',
+        name: 'image',
+        component: () => import('@/views/sms/image/image'),
+        meta: {title: '添加图片', icon: 'order'},
+      },
+      {
+        path: 'list',
+        name: 'list',
+        component: () => import('@/views/sms/image/imageList'),
+        meta: {title: '图片数据', icon: 'order'},
+      }
+
+    ]
+  },
   {path: '*', redirect: '/404', hidden: true}
 ]
 
