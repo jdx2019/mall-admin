@@ -13,15 +13,15 @@
       <div class="operate-container">
         <i class="el-icon-warning color-danger" style="margin-left: 20px"></i>
         <span class="color-danger">当前订单状态：{{order.status | formatStatus}}</span>
-        <div class="operate-button-container" v-show="order.status===0">
+        <!-- <div class="operate-button-container" v-show="order.status===0">
           <el-button size="mini" @click="showUpdateReceiverDialog">修改收货人信息</el-button>
           <el-button size="mini">修改商品信息</el-button>
           <el-button size="mini" @click="showUpdateMoneyDialog">修改费用信息</el-button>
           <el-button size="mini" @click="showMessageDialog">发送站内信</el-button>
           <el-button size="mini" @click="showCloseOrderDialog">关闭订单</el-button>
           <el-button size="mini" @click="showMarkOrderDialog">备注订单</el-button>
-        </div>
-        <div class="operate-button-container" v-show="order.status===1">
+        </div> -->
+        <!-- <div class="operate-button-container" v-show="order.status===1">
           <el-button size="mini" @click="showUpdateReceiverDialog">修改收货人信息</el-button>
           <el-button size="mini" @click="showMessageDialog">发送站内信</el-button>
           <el-button size="mini">取消订单</el-button>
@@ -35,7 +35,7 @@
         <div class="operate-button-container" v-show="order.status===4">
           <el-button size="mini" @click="handleDeleteOrder">删除订单</el-button>
           <el-button size="mini" @click="showMarkOrderDialog">备注订单</el-button>
-        </div>
+        </div> -->
       </div>
       <div style="margin-top: 20px">
         <svg-icon icon-class="marker" style="color: #606266"></svg-icon>

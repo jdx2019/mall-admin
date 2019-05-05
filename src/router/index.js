@@ -178,13 +178,15 @@ export const constantRouterMap = [
         path: 'returnApply',
         name: 'returnApply',
         component: () => import('@/views/oms/apply/index'),
-        meta: {title: '退货申请处理', icon: 'order-return'}
+        meta: {title: '退货申请处理', icon: 'order-return'},
+        hidden:true
       },
       {
         path: 'returnReason',
         name: 'returnReason',
         component: () => import('@/views/oms/apply/reason'),
-        meta: {title: '退货原因设置', icon: 'order-return-reason'}
+        meta: {title: '退货原因设置', icon: 'order-return-reason'},
+        hidden:true
       },
       {
         path: 'returnApplyDetail',
@@ -382,10 +384,16 @@ export const constantRouterMap = [
         meta: {title: '添加图片', icon: 'order'},
       },
       {
-        path: 'list',
-        name: 'list',
+        path: 'imageList',
+        name: 'imageList',
         component: () => import('@/views/sms/image/imageList'),
         meta: {title: '图片数据', icon: 'order'},
+      },
+      {
+        path: 'userList',
+        name: 'userList',
+        component: () => import('@/views/sms/user/userList'),
+        meta: {title: '用户数据', icon: 'order'},
       }
 
     ]

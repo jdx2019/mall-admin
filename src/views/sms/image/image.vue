@@ -126,7 +126,7 @@
                     type: 'success',
                     duration:1000
                   });
-                  // this.$router.replace('/know/newsList');
+                   this.$router.replace('/image/imageList');
                 }).catch(function (error) {
                     console.log(error);
                   });
