@@ -70,8 +70,8 @@
       };
       return {
         loginForm: {
-          username: 'admin',
-          password: '123456'
+          username: '',
+          password: ''
         },
         loginRules: {
           username: [{required: true, trigger: 'blur', validator: validateUsername}],
@@ -99,6 +99,7 @@
               this.$router.push({path: '/'})
             }).catch(() => {
               this.loading = false
+              alert("账号密码错误，请重新输入！");
             })
           } else {
             console.log('参数验证不合法！');

@@ -1,6 +1,6 @@
 export function isvalidUsername(str) {
-  const valid_map = ['admin', 'test']
-  return valid_map.indexOf(str.trim()) >= 0
+  // const valid_map = ['admin', 'test']
+  return true
 }
 
 /* 合法uri*/

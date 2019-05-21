@@ -300,7 +300,9 @@
 
 
         this.$axios.get('http://www.hystkj.com:8080/home/welcome').then(res => {
+          this.$nextTick(function () {
             this.welcomeDatas = res.data.data;
+          })
         }).catch(function (error) {
           console.log(error);
         });
@@ -318,6 +320,7 @@
   }
 
   .address-layout {
+    
   }
 
   .total-layout {

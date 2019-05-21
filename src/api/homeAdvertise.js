@@ -104,3 +104,12 @@ export function deleteImage(data) {
     data:data
   })
 }
+
+
+// 获取知道轮播数据
+export function getAcList(pageSize,pageNum) {
+  return request({
+    url:'/information/list?pageSize='+pageSize+'&pageNum='+pageNum+'&mold=1',
+    method:'get'
+  })
+}
